@@ -39,8 +39,7 @@ async def on_message(message):
             {"role": "user", "content": user_input}
         ]
         )
-        print("Test")
-        await message.channel.send(completion.choices[0].message)[content]
+        await message.channel.send(completion.choices[0].message)
 
 # nest_asyncioを適用
 nest_asyncio.apply()
