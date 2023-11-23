@@ -28,6 +28,10 @@ async def on_message(message):
         return
 
     if message.content.startswith('!talk'):
+
+        #生成開始
+        await message.channel.send("生成中...")
+
         #ユーザーからの入力を受け取る
         user_input = message.content[6:]
 
@@ -39,6 +43,7 @@ async def on_message(message):
             {"role": "user", "content": user_input}
         ]
         )
+
         await message.channel.send(completion.choices[0].message.content)
 
 # nest_asyncioを適用
