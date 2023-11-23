@@ -35,11 +35,11 @@ async def on_message(message):
         completion = o_client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair on Japanese."},
+            {"role": "system", "content": "You are a Japanese assistant, skilled in explaining complex programming concepts with creative flair."},
             {"role": "user", "content": user_input}
         ]
         )
-        await message.channel.send(completion.choices[0].message)
+        await message.channel.send(completion.choices[0].message.content)
 
 # nest_asyncioを適用
 nest_asyncio.apply()
